@@ -15,6 +15,7 @@
 		1105F5532ABFFF490041C47F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1105F5512ABFFF490041C47F /* LaunchScreen.storyboard */; };
 		1105F5562ABFFF490041C47F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1105F5552ABFFF490041C47F /* main.m */; };
 		118751C32AC08293002CE454 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 118751C22AC08293002CE454 /* sample.json */; };
+		11934A432AC0A4FF008B63A1 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 11934A422AC0A4FF008B63A1 /* Day.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		1105F5542ABFFF490041C47F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1105F5552ABFFF490041C47F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		118751C22AC08293002CE454 /* sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		11934A422AC0A4FF008B63A1 /* Day.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Day.m; sourceTree = "<group>"; };
+		11934A442AC0A527008B63A1 /* Day.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				1105F5472ABFFF490041C47F /* SceneDelegate.m */,
 				1105F5492ABFFF490041C47F /* ViewController.h */,
 				1105F54A2ABFFF490041C47F /* ViewController.m */,
+				11934A442AC0A527008B63A1 /* Day.h */,
+				11934A422AC0A4FF008B63A1 /* Day.m */,
 				1105F54C2ABFFF490041C47F /* Main.storyboard */,
 				1105F54F2ABFFF490041C47F /* Assets.xcassets */,
 				1105F5512ABFFF490041C47F /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 			files = (
 				1105F54B2ABFFF490041C47F /* ViewController.m in Sources */,
 				1105F5452ABFFF490041C47F /* AppDelegate.m in Sources */,
+				11934A432AC0A4FF008B63A1 /* Day.m in Sources */,
 				1105F5562ABFFF490041C47F /* main.m in Sources */,
 				1105F5482ABFFF490041C47F /* SceneDelegate.m in Sources */,
 			);

@@ -6,33 +6,48 @@
 //
 
 #import "ViewController.h"
+#import "Day.h"
 
 @interface ViewController ()
 
 @end
+
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *days = [self JSONFromFile];
-    NSLog(@"Json data is here %@", days);
-    for (NSDictionary * item in days)
-    {
+    _days = [NSMutableArray new];
+    
+    [self populateDays];
+}
+
+- (void)populateDays {
+    NSArray *jsonItems = [self JSONFromFile];
+    NSLog(@"Json data: %@", jsonItems);
+    
+    for (NSDictionary * item in jsonItems) {
         NSString *date = (NSString *)item[@"date"];
         NSString *day = (NSString *)item[@"day"];
         NSString *ID = (NSString *)item[@"id"];
-        NSLog(@"date: %@",date);
-        NSLog(@"day: %@",day);
-        NSLog(@"id: %@",ID);
+        
+        Day *dayObject = [Day new];
+        dayObject.day =  day;
+        dayObject.date = date;
+        dayObject.ID = ID;
+        
+        [_days addObject:dayObject];
+        for ( Day *day in _days) {
+            NSLog(@"Date:- %@ Day:-%@ ID:-%@", day.date, day.day, day.ID);
+        }
     }
 }
 
-- (id)JSONFromFile
-{
+- (id)JSONFromFile {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 }
+
 @end

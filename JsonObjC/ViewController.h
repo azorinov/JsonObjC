@@ -9,6 +9,7 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic,retain) NSMutableArray *days;
 
 @end
 
