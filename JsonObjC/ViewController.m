@@ -12,7 +12,6 @@
 
 @end
 
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -38,7 +37,7 @@
         dayObject.ID = ID;
         
         [_days addObject:dayObject];
-        for ( Day *day in _days) {
+        for (Day *day in _days) {
             NSLog(@"Date:- %@ Day:-%@ ID:-%@", day.date, day.day, day.ID);
         }
     }

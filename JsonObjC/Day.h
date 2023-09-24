@@ -5,9 +5,6 @@
 //  Created by Alexander Zorinov on 2023-09-24.
 //
 
-#ifndef Day_h
-#define Day_h
-
 @interface Day : NSObject {
     
 }
@@ -18,4 +15,3 @@
 - (instancetype)init;
 @end
 
-#endif /* Day_h */
