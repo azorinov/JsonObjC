@@ -13,8 +13,8 @@ Remove Storyboard
 
 3. Remove from info. <img width="719" alt="remove from info 2" src="https://github.com/azorinov/JsonObjC/assets/137667539/0790ef74-36ec-460c-88eb-a2e7bb825b0b">
 
-4.Add #import "ViewController.h" in SceneDelegate.
 
+4. Add #import "ViewController.h" in SceneDelegate.
 5. Add in SceneDelegate:
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     self.window.windowScene = (UIWindowScene *)scene;
