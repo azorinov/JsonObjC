@@ -8,8 +8,8 @@
 #import "ViewController.h"
 #import "Day.h"
 
-@interface ViewController ()
-
+@interface ViewController () <UITableViewDelegate,UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @end
 
 @implementation ViewController
@@ -20,6 +20,8 @@
     _days = [NSMutableArray new];
     
     [self populateDays];
+    
+    [self populateTableView];
 }
 
 - (void)populateDays {
@@ -47,6 +49,30 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookmarkCell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"bookmarkCell"];
+    }
+    
+    Day *dayObject = [_days objectAtIndex:indexPath.row];
+    cell.textLabel.text = dayObject.day;
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_days count];
+}
+
+- (void)populateTableView {
+    _myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,  self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    
+    _myTableView.dataSource = self;
+    _myTableView.delegate = self;
+    
+    [self.view addSubview:_myTableView];
 }
 
 @end
