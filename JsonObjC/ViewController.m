@@ -10,6 +10,7 @@
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
+@property (nonatomic, copy, nullable ) UIViewController* (^CreateController)(NSString *);
 @end
 
 @implementation ViewController
