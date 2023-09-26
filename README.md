@@ -16,7 +16,8 @@ Remove Storyboard.
 
 4. Add #import "ViewController.h" in SceneDelegate.
 5. Add in SceneDelegate:
-   
+
+   - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     self.window.windowScene = (UIWindowScene *)scene;
     
@@ -25,3 +26,4 @@ Remove Storyboard.
     
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController: viewController];
     [self.window makeKeyAndVisible];
+}
